@@ -1,0 +1,91 @@
+/*
+ * Design Tokens
+ * Chapter 01（The Dinner）與 Chapter 02（The Getaway）
+ * 共用同一套間距、字重比例，但色彩主題不同。
+ */
+
+:root {
+  /* ---------- Chapter 01 · The Dinner ---------- */
+  /* 深色、精品、神祕 */
+  --dinner-bg: #111111;
+  --dinner-bg-alt: #171717;
+  --dinner-surface: #1c1c1c;
+  --dinner-text: #f4efe7;
+  --dinner-text-muted: rgba(244, 239, 231, 0.6);
+  --dinner-accent: #c8a866; /* Champagne Gold（避免金屬漸層，僅單一色階） */
+  --dinner-accent-soft: rgba(200, 168, 102, 0.35);
+  --dinner-secondary: #8a8378; /* Warm Gray */
+  --dinner-border: rgba(244, 239, 231, 0.14);
+
+  /* ---------- Chapter 02 · The Getaway ---------- */
+  /* 柔和、私人、Editorial */
+  --getaway-bg: #f7f1e6; /* Ivory */
+  --getaway-bg-alt: #f1e7d6; /* Cream */
+  --getaway-surface: #fffdf8;
+  --getaway-text: #2c2620;
+  --getaway-text-muted: rgba(44, 38, 32, 0.6);
+  --getaway-accent: #b48b52; /* Soft Gold */
+  --getaway-accent-soft: rgba(180, 139, 82, 0.25);
+  --getaway-secondary: #a79c8c; /* Warm Gray */
+  --getaway-beige: #e8dcc8; /* Warm Beige */
+  --getaway-border: rgba(44, 38, 32, 0.12);
+
+  /* ---------- Neutral scale ---------- */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ---------- Spacing scale ---------- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.25rem;
+  --space-2xl: 5rem;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.28);
+  --shadow-paper: 0 6px 24px rgba(44, 38, 32, 0.14);
+
+  /* ---------- Motion ---------- */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 400ms;
+  --duration-base: 600ms;
+  --duration-slow: 900ms;
+
+  /* ---------- Layout ---------- */
+  --content-max-width: 480px;
+}
+
+/*
+ * Theme 對應：共用元件（AnimatedButton、InvitationPass 等）
+ * 一律使用下列語意變數，由外層 View 決定實際色彩主題。
+ */
+.theme-dinner {
+  --bg: var(--dinner-bg);
+  --bg-alt: var(--dinner-bg-alt);
+  --surface: var(--dinner-surface);
+  --text: var(--dinner-text);
+  --text-muted: var(--dinner-text-muted);
+  --accent: var(--dinner-accent);
+  --accent-soft: var(--dinner-accent-soft);
+  --secondary: var(--dinner-secondary);
+  --border: var(--dinner-border);
+}
+
+.theme-getaway {
+  --bg: var(--getaway-bg);
+  --bg-alt: var(--getaway-bg-alt);
+  --surface: var(--getaway-surface);
+  --text: var(--getaway-text);
+  --text-muted: var(--getaway-text-muted);
+  --accent: var(--getaway-accent);
+  --accent-soft: var(--getaway-accent-soft);
+  --secondary: var(--getaway-secondary);
+  --border: var(--getaway-border);
+}
