@@ -33,7 +33,7 @@ const dateParts = computed(() => formatDateParts(birthdayConfig.dinner.date))
     </div>
 
     <p class="body-text dinner-invitation__note rise-in">
-      這個特別的晚上，<br />想邀請你跟我一起度過。
+      在這個特別的日子，<br />想邀請你和我一起度過美好夜晚
     </p>
 
     <AnimatedButton class="dinner-invitation__cta" @click="emit('accept')">
@@ -44,14 +44,15 @@ const dateParts = computed(() => formatDateParts(birthdayConfig.dinner.date))
 
 <style scoped>
 .dinner-invitation {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-sm);
+  padding: var(--space-lg);
   text-align: center;
   color: var(--text);
 }

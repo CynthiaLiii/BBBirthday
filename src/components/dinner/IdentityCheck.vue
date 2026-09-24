@@ -1,20 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { identityQuestion } from '@/data/questions'
+import { computed, ref } from 'vue'
+import { identityQuestions } from '@/data/questions'
 import AnimatedButton from '@/components/common/AnimatedButton.vue'
 
 const emit = defineEmits<{ verified: [] }>()
 
+const currentIndex = ref(0)
 const selectedId = ref<string | null>(null)
 const status = ref<'idle' | 'correct' | 'incorrect'>('idle')
 
+const currentQuestion = computed(() => identityQuestions[currentIndex.value])
+const isLastQuestion = computed(() => currentIndex.value >= identityQuestions.length - 1)
+
 function selectOption(id: string) {
   selectedId.value = id
-  const option = identityQuestion.options.find((item) => item.id === id)
+  const option = currentQuestion.value?.options.find((item) => item.id === id)
   status.value = option?.correct ? 'correct' : 'incorrect'
 
   if (option?.correct) {
-    window.setTimeout(() => emit('verified'), 900)
+    window.setTimeout(() => {
+      if (isLastQuestion.value) {
+        emit('verified')
+      } else {
+        currentIndex.value += 1
+        selectedId.value = null
+        status.value = 'idle'
+      }
+    }, 1800)
   }
 }
 
@@ -26,15 +38,17 @@ function retry() {
 
 <template>
   <section class="identity-check">
-    <p class="eyebrow rise-in">Identity Verification</p>
+    <p class="eyebrow rise-in">
+      Identity Verification ({{ currentIndex + 1 }}/{{ identityQuestions.length }})
+    </p>
 
     <p class="body-text-lg identity-check__question rise-in">
-      {{ identityQuestion.question }}
+      {{ currentQuestion?.question }}
     </p>
 
     <div v-if="status !== 'correct'" class="identity-check__options">
       <button
-        v-for="option in identityQuestion.options"
+        v-for="option in currentQuestion?.options"
         :key="option.id"
         type="button"
         class="identity-check__option body-text"
@@ -48,7 +62,7 @@ function retry() {
     <Transition name="fade">
       <div v-if="status === 'incorrect'" class="identity-check__feedback identity-check__feedback--denied">
         <p class="label">Access Denied</p>
-        <p class="body-text">{{ identityQuestion.failureMessage }}</p>
+        <p class="body-text">{{ currentQuestion?.failureMessage }}</p>
         <AnimatedButton variant="ghost" @click="retry">再試一次</AnimatedButton>
       </div>
     </Transition>
@@ -56,7 +70,7 @@ function retry() {
     <Transition name="fade">
       <div v-if="status === 'correct'" class="identity-check__feedback identity-check__feedback--verified">
         <p class="label">Identity Verified</p>
-        <p class="heading-3">{{ identityQuestion.successMessage }}</p>
+        <p class="heading-3">{{ currentQuestion?.successMessage }}</p>
       </div>
     </Transition>
   </section>
@@ -64,14 +78,15 @@ function retry() {
 
 <style scoped>
 .identity-check {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-lg);
   text-align: center;
   color: var(--text);
 }

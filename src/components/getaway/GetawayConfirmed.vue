@@ -47,13 +47,14 @@ onMounted(() => {
 
 <style scoped>
 .getaway-confirmed {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-lg);
   color: var(--text);
   text-align: center;
 }

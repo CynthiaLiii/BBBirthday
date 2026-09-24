@@ -95,7 +95,7 @@ onMounted(setupCanvas)
 <template>
   <div class="mission-date">
     <p class="label mission-date__label">Mission 01</p>
-    <p class="heading-3 mission-date__question">How long is<br />our next date?</p>
+    <p class="heading-3 mission-date__question">One date isn't<br />enough, right?</p>
 
     <div class="mission-date__scratch-area">
       <p class="heading-2 mission-date__answer" aria-hidden="true">NOV 06 — 07</p>
@@ -110,6 +110,12 @@ onMounted(setupCanvas)
         @pointerleave="handlePointerUp"
       />
     </div>
+
+    <Transition name="fade">
+      <p v-if="isRevealed" class="body-text-lg mission-date__message">
+        But I'm actually planning to steal you for a lifetime
+      </p>
+    </Transition>
 
     <Transition name="fade">
       <AnimatedButton v-if="isRevealed" class="mission-date__next" @click="emit('complete')">
@@ -159,5 +165,12 @@ onMounted(setupCanvas)
   height: 100%;
   touch-action: none;
   cursor: pointer;
+}
+
+.mission-date__message {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent);
+  max-width: 280px;
 }
 </style>

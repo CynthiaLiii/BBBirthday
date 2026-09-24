@@ -20,7 +20,7 @@ onMounted(() => {
     <p class="heading-3 getaway-unlock__question rise-in">You Thought<br />That Was All?</p>
 
     <p class="body-text getaway-unlock__note rise-in">
-      其實，我還偷偷準備了一些東西。
+      其實，我還偷偷準備了一些東西 ~
     </p>
 
     <button class="getaway-unlock__cta label" type="button" @click="$emit('continue')">
@@ -31,14 +31,15 @@ onMounted(() => {
 
 <style scoped>
 .getaway-unlock {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-sm);
+  padding: var(--space-lg);
   text-align: center;
   background: var(--dinner-bg);
   color: var(--dinner-text);
@@ -63,7 +64,7 @@ onMounted(() => {
 }
 
 .getaway-unlock__cta {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-2xs);
   padding: 1rem 2.4rem;
   min-height: 48px;
   color: var(--getaway-bg);

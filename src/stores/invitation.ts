@@ -22,7 +22,6 @@ interface InvitationState {
   getawayAccepted: boolean
   getawayScene: GetawayScene
   completedMissions: MissionId[]
-  musicEnabled: boolean
 }
 
 const STORAGE_KEY = 'bbbirthday-invitation-state'
@@ -54,7 +53,6 @@ export const useInvitationStore = defineStore('invitation', {
     getawayAccepted: persisted?.getawayAccepted ?? false,
     getawayScene: persisted?.getawayScene ?? 'unlock',
     completedMissions: persisted?.completedMissions ?? [],
-    musicEnabled: persisted?.musicEnabled ?? false,
   }),
 
   actions: {
@@ -82,11 +80,6 @@ export const useInvitationStore = defineStore('invitation', {
 
     acceptGetaway() {
       this.getawayAccepted = true
-      this._save()
-    },
-
-    toggleMusic(enabled?: boolean) {
-      this.musicEnabled = enabled ?? !this.musicEnabled
       this._save()
     },
 

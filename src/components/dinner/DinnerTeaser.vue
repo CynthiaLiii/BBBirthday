@@ -13,7 +13,7 @@ const store = useInvitationStore()
     <p class="dinner-teaser__dates label rise-in">Nov 06 — Nov 07</p>
 
     <p class="body-text dinner-teaser__note rise-in">
-      這兩天也要留給我。<br />不可以偷偷安排其他行程。
+      這兩天也要留給你的小寶<br />不可以偷偷安排其他行程哦
     </p>
 
     <div class="dinner-teaser__lock rise-in">
@@ -32,14 +32,15 @@ const store = useInvitationStore()
 
 <style scoped>
 .dinner-teaser {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-sm);
+  padding: var(--space-lg);
   text-align: center;
   color: var(--text);
 }
@@ -55,8 +56,8 @@ const store = useInvitationStore()
 }
 
 .dinner-teaser__lock {
-  margin-top: var(--space-lg);
-  padding: var(--space-lg) var(--space-md);
+  margin-top: var(--space-2xs);
+  padding: var(--space-md);
   width: 100%;
   max-width: 300px;
   border: 1px dashed var(--border);
@@ -76,7 +77,7 @@ const store = useInvitationStore()
 }
 
 .dinner-teaser__replay {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xs);
   color: var(--text-muted);
   opacity: 0.5;
   letter-spacing: 0.2em;

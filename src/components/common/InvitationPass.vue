@@ -35,7 +35,7 @@ defineProps<{
 .invitation-pass {
   position: relative;
   width: 100%;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -64,13 +64,13 @@ defineProps<{
 
 .invitation-pass__eyebrow {
   color: var(--accent);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .invitation-pass__rows {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
 }
 
 .invitation-pass__row {
@@ -85,12 +85,12 @@ defineProps<{
 
 .invitation-pass__row-value {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
 }
 
 .invitation-pass__divider {
   height: 1px;
-  margin: var(--space-md) 0;
+  margin: var(--space-sm) 0;
   background: repeating-linear-gradient(
     to right,
     var(--border) 0,

@@ -92,14 +92,15 @@ function dodgeNoButton() {
 
 <style scoped>
 .getaway-invitation {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-xs);
+  padding: var(--space-md);
   text-align: center;
   color: var(--text);
 }
@@ -107,13 +108,13 @@ function dodgeNoButton() {
 .getaway-invitation__details {
   width: 100%;
   max-width: 320px;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-2xs);
 }
 
 .getaway-invitation__dates {
@@ -130,8 +131,8 @@ function dodgeNoButton() {
 .getaway-invitation__row {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding-top: var(--space-sm);
+  gap: 1px;
+  padding-top: var(--space-2xs);
   border-top: 1px solid var(--border);
   text-align: left;
 }

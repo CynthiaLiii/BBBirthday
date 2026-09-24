@@ -10,6 +10,7 @@ export interface BirthdayConfig {
   }
   girlfriend: {
     name: string
+    nickname: string
   }
   dinner: {
     date: string // ISO 格式 YYYY-MM-DD
@@ -33,19 +34,20 @@ export interface BirthdayConfig {
 
 export const birthdayConfig: BirthdayConfig = {
   boyfriend: {
-    name: 'PLACEHOLDER',
-    nickname: 'PLACEHOLDER',
+    name: 'Jonathan',
+    nickname: '大寶',
   },
 
   girlfriend: {
-    name: 'PLACEHOLDER',
+    name: 'Cynthia',
+    nickname: '小寶',
   },
 
   dinner: {
     date: '2026-11-03',
     time: '19:00',
-    restaurant: 'PLACEHOLDER',
-    address: 'PLACEHOLDER',
+    restaurant: 'Ducky Restaurant 大嗑西式餐館 ',
+    address: '臺北市中正區濟南路二段18-3號',
     dressCode: 'Be your handsome self.',
   },
 

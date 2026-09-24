@@ -2,7 +2,6 @@
 import { computed, onMounted } from 'vue'
 import { MISSION_IDS, useInvitationStore, type GetawayScene, type MissionId } from '@/stores/invitation'
 import SceneTransition from '@/components/common/SceneTransition.vue'
-import MusicToggle from '@/components/common/MusicToggle.vue'
 import GetawayUnlock from '@/components/getaway/GetawayUnlock.vue'
 import MemoryArchive from '@/components/getaway/MemoryArchive.vue'
 import MissionDate from '@/components/getaway/MissionDate.vue'
@@ -44,8 +43,6 @@ onMounted(() => {
 
 <template>
   <div class="getaway-view" :class="{ 'theme-getaway': scene !== 'unlock' }">
-    <MusicToggle />
-
     <SceneTransition :scene-key="scene">
       <GetawayUnlock v-if="scene === 'unlock'" @continue="goTo('memories')" />
 
@@ -79,17 +76,19 @@ onMounted(() => {
 .getaway-view {
   background: var(--bg, var(--getaway-bg));
   color: var(--text, var(--getaway-text));
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   transition: background-color var(--duration-slow) var(--ease-editorial);
 }
 
 .getaway-view__mission {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-lg);
 }
 </style>

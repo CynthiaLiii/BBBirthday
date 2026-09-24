@@ -11,8 +11,6 @@ const emit = defineEmits<{ continue: [] }>()
 
 const phase = ref<'loading' | 'confirmed'>('loading')
 const showConfetti = ref(false)
-const passRef = ref<HTMLElement | null>(null)
-const isSaving = ref(false)
 
 const dateParts = formatDateParts(birthdayConfig.dinner.date)
 const { addToCalendar } = useCalendar()
@@ -37,23 +35,6 @@ function handleAddToCalendar() {
     filename: 'birthday-dinner.ics',
   })
 }
-
-async function handleSavePass() {
-  if (!passRef.value || isSaving.value) return
-  isSaving.value = true
-  try {
-    const { toPng } = await import('html-to-image')
-    const dataUrl = await toPng(passRef.value, { pixelRatio: 2 })
-    const link = document.createElement('a')
-    link.href = dataUrl
-    link.download = 'dinner-pass.png'
-    link.click()
-  } catch {
-    // Save Pass 失敗不影響邀請流程
-  } finally {
-    isSaving.value = false
-  }
-}
 </script>
 
 <template>
@@ -69,7 +50,7 @@ async function handleSavePass() {
         <p class="label dinner-confirmed__status rise-in">Dinner Reservation</p>
         <h2 class="heading-2 rise-in">Confirmed</h2>
 
-        <div ref="passRef" class="dinner-confirmed__pass rise-in">
+        <div class="dinner-confirmed__pass rise-in">
           <InvitationPass
             eyebrow="Birthday Dinner"
             :rows="[
@@ -86,9 +67,6 @@ async function handleSavePass() {
           <AnimatedButton variant="ghost" @click="handleAddToCalendar">
             Add To Calendar
           </AnimatedButton>
-          <AnimatedButton variant="ghost" :loading="isSaving" @click="handleSavePass">
-            Save Pass
-          </AnimatedButton>
         </div>
 
         <button class="dinner-confirmed__continue label" type="button" @click="emit('continue')">
@@ -101,13 +79,14 @@ async function handleSavePass() {
 
 <style scoped>
 .dinner-confirmed {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-lg);
   color: var(--text);
 }
 
@@ -136,7 +115,7 @@ async function handleSavePass() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   text-align: center;
   width: 100%;
 }
@@ -147,8 +126,8 @@ async function handleSavePass() {
 
 .dinner-confirmed__pass {
   width: 100%;
-  max-width: 320px;
-  margin-top: var(--space-md);
+  max-width: 300px;
+  margin-top: var(--space-2xs);
 }
 
 .dinner-confirmed__actions {
@@ -159,7 +138,7 @@ async function handleSavePass() {
 }
 
 .dinner-confirmed__continue {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-2xs);
   color: var(--text-muted);
   letter-spacing: 0.2em;
 }

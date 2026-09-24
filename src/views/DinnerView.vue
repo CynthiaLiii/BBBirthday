@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useInvitationStore, type DinnerScene } from '@/stores/invitation'
 import SceneTransition from '@/components/common/SceneTransition.vue'
-import MusicToggle from '@/components/common/MusicToggle.vue'
 import DinnerOpening from '@/components/dinner/DinnerOpening.vue'
 import IdentityCheck from '@/components/dinner/IdentityCheck.vue'
 import DinnerInvitation from '@/components/dinner/DinnerInvitation.vue'
@@ -25,8 +24,6 @@ function handleAccept() {
 
 <template>
   <div class="dinner-view theme-dinner">
-    <MusicToggle />
-
     <SceneTransition :scene-key="scene">
       <DinnerOpening v-if="scene === 'opening'" @opened="goTo('identity')" />
       <IdentityCheck v-else-if="scene === 'identity'" @verified="goTo('invitation')" />
@@ -41,8 +38,9 @@ function handleAccept() {
 .dinner-view {
   background: var(--bg);
   color: var(--text);
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   transition: background-color var(--duration-slow) var(--ease-editorial);
 }
 </style>

@@ -17,7 +17,7 @@ function handleOpen() {
 
 <template>
   <section class="dinner-opening">
-    <p class="eyebrow rise-in">A Private Message For You</p>
+    <p class="eyebrow rise-in">Dear Jonathan</p>
 
     <div class="dinner-opening__envelope" :class="{ 'is-opening': isOpening }">
       <div class="dinner-opening__flap" />
@@ -43,15 +43,16 @@ function handleOpen() {
 
 <style scoped>
 .dinner-opening {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: var(--space-lg);
-  padding: var(--space-2xl) var(--space-lg);
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-lg);
   color: var(--text);
 }
 

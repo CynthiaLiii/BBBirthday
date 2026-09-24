@@ -36,14 +36,13 @@ npm run qrcode -- "https://your-domain.com/getaway/<random-token>" ./getaway-qrc
 | [src/data/questions.ts](src/data/questions.ts) | Identity Verification 的正確選項文字 |
 | [src/data/memories.ts](src/data/memories.ts) | Memory Archive 的照片路徑、日期、回憶文字 |
 | `public/images/memories/*` | 實際回憶照片（目前為 SVG 佔位圖） |
-| `public/audio/background-music.mp3` | 背景音樂（目前未提供，靜音不影響使用） |
 
 正式部署前，建議將 `/getaway` 改為不可猜測的網址（例如加上亂數 token），避免被意外發現。
 
 ## 專案結構
 
 - `src/components/dinner/`、`src/components/getaway/`：各 Chapter 的 Scene 元件
-- `src/components/common/`：共用元件（按鈕、票券、音樂開關、Scene 轉場）
-- `src/composables/`：Scene 步進、音樂、Confetti、行事曆邏輯
+- `src/components/common/`：共用元件（按鈕、票券、Scene 轉場）
+- `src/composables/`：Scene 步進、Confetti、行事曆邏輯
 - `src/stores/invitation.ts`：Pinia store，含 localStorage 進度保存
 - `scripts/generate-qrcode.mjs`：QR Code 產生工具

@@ -10,13 +10,14 @@
   --font-sans:
     'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
 
-  --fs-label: 0.7rem;
-  --fs-body: 0.95rem;
-  --fs-body-lg: 1.1rem;
-  --fs-h3: 1.5rem;
-  --fs-h2: 2.1rem;
-  --fs-h1: 2.8rem;
-  --fs-display: 3.4rem;
+  /* 字級隨視窗高度縮放，避免內容在短螢幕裝置上需要捲動 */
+  --fs-label: clamp(0.6rem, 1.6vh, 0.7rem);
+  --fs-body: clamp(0.8rem, 2.2vh, 0.95rem);
+  --fs-body-lg: clamp(0.9rem, 2.6vh, 1.1rem);
+  --fs-h3: clamp(1.1rem, 4vh, 1.5rem);
+  --fs-h2: clamp(1.4rem, 5.5vh, 2.1rem);
+  --fs-h1: clamp(1.6rem, 6.5vh, 2.8rem);
+  --fs-display: clamp(1.9rem, 8vh, 3.4rem);
 }
 
 .font-serif {
