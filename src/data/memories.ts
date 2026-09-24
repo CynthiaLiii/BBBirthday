@@ -16,7 +16,7 @@ export const memories: Memory[] = [
     id: 'memory-01',
     image: '/images/memories/TheBeginning-01.jpg',
     date: 'THE BEGINNING',
-    message: '那時候的我們還有點害羞 有點不習慣',
+    message: '那時候的我們還有點害羞、還有點不習慣',
     rotate: -2,
   },
   {

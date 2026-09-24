@@ -113,7 +113,7 @@ onMounted(setupCanvas)
 
     <Transition name="fade">
       <p v-if="isRevealed" class="body-text-lg mission-date__message">
-        But I'm actually planning to steal you for a lifetime
+        And by “more dates,” I mean forever.
       </p>
     </Transition>
 

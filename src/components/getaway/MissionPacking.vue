@@ -6,7 +6,7 @@ const emit = defineEmits<{ complete: [] }>()
 
 const isOpen = ref(false)
 
-const packingItems = ['換洗衣物', '個人用品', '充電器', '還有你本人']
+const packingItems = ['換洗衣物', '個人用品', '充電器', '色色的心', '還有大寶本人']
 
 function openBox() {
   if (isOpen.value) return

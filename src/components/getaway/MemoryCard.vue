@@ -28,9 +28,9 @@ function toggleFlip() {
       </span>
 
       <span class="memory-card__face memory-card__face--back">
-        <span v-if="props.memory.date" class="heading-3 memory-card__title">{{
+        <!-- <span v-if="props.memory.date" class="heading-3 memory-card__title">{{
           props.memory.date
-        }}</span>
+        }}</span> -->
         <span class="body-text memory-card__message">{{ props.memory.message }}</span>
       </span>
     </span>
