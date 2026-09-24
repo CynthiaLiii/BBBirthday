@@ -18,18 +18,18 @@ function toggleFlip() {
     :style="{ '--rotate': `${props.memory.rotate}deg` }"
     :class="{ 'is-flipped': flipped }"
     :aria-pressed="flipped"
-    :aria-label="`${props.memory.title ?? '回憶照片'}，點擊翻面查看文字`"
+    :aria-label="`${props.memory.date ?? '回憶照片'}，點擊翻面查看文字`"
     @click="toggleFlip"
   >
     <span class="memory-card__inner">
       <span class="memory-card__face memory-card__face--front">
-        <img :src="props.memory.image" :alt="props.memory.title ?? '回憶照片'" loading="lazy" />
+        <img :src="props.memory.image" :alt="props.memory.date ?? '回憶照片'" loading="lazy" />
         <span v-if="props.memory.date" class="memory-card__date label">{{ props.memory.date }}</span>
       </span>
 
       <span class="memory-card__face memory-card__face--back">
-        <span v-if="props.memory.title" class="heading-3 memory-card__title">{{
-          props.memory.title
+        <span v-if="props.memory.date" class="heading-3 memory-card__title">{{
+          props.memory.date
         }}</span>
         <span class="body-text memory-card__message">{{ props.memory.message }}</span>
       </span>
