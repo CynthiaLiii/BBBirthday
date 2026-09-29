@@ -101,7 +101,7 @@ onUnmounted(() => {
 <template>
   <div class="mission-reveal">
     <template v-if="phase !== 'success'">
-      <p class="label-zh mission-reveal__label">MISSION 02・耐力大考驗</p>
+      <p class="label-zh mission-reveal__label">MISSION 03・耐力大考驗</p>
       <p class="heading-3 mission-reveal__question">寶貝，你覺得<br />自己能撐一整晚嗎？</p>
 
       <button
