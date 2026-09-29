@@ -15,16 +15,16 @@ onMounted(() => {
 <template>
   <section class="getaway-unlock" :class="{ 'is-transitioned': isTransitioned }">
     <p class="eyebrow rise-in">Chapter 02</p>
-    <h1 class="heading-1 rise-in">Unlocked</h1>
+    <h1 class="heading-1 rise-in">已解鎖</h1>
 
-    <p class="heading-3 getaway-unlock__question rise-in">You Thought<br />That Was All?</p>
+    <p class="heading-3 getaway-unlock__question rise-in">你以為<br />這樣就結束了嗎？</p>
 
     <p class="body-text getaway-unlock__note rise-in">
-      其實，我還偷偷準備了一些東西 ~
+      其實，我還偷偷準備了一些東西
     </p>
 
-    <button class="getaway-unlock__cta label" type="button" @click="$emit('continue')">
-      Continue
+    <button class="getaway-unlock__cta label-zh" type="button" @click="$emit('continue')">
+      繼續
     </button>
   </section>
 </template>
@@ -70,7 +70,6 @@ onMounted(() => {
   color: var(--getaway-bg);
   background: var(--getaway-accent);
   border-radius: var(--radius-sm);
-  letter-spacing: 0.2em;
   opacity: 0;
   animation: riseIn var(--duration-base) var(--ease-editorial) 500ms forwards;
 }

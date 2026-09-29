@@ -43,8 +43,7 @@ function handleClick(event: MouseEvent) {
   font-family: var(--font-sans);
   font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: var(--radius-sm);
   transition:
     transform var(--duration-fast) var(--ease-editorial),

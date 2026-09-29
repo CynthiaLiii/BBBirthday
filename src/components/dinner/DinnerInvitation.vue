@@ -11,9 +11,8 @@ const dateParts = computed(() => formatDateParts(birthdayConfig.dinner.date))
 
 <template>
   <section class="dinner-invitation">
-    <p class="eyebrow rise-in">You Are Cordially Invited</p>
 
-    <h2 class="heading-2 dinner-invitation__title rise-in">A Birthday<br />Dinner For Two</h2>
+    <h2 class="heading-2 dinner-invitation__title rise-in">Invitation</h2>
 
     <div class="dinner-invitation__details rise-in">
       <p class="label dinner-invitation__date">
@@ -29,7 +28,7 @@ const dateParts = computed(() => formatDateParts(birthdayConfig.dinner.date))
         <p class="body-text dinner-invitation__address">{{ birthdayConfig.dinner.address }}</p>
       </div>
 
-      <p class="label dinner-invitation__dresscode">{{ birthdayConfig.dinner.dressCode }}</p>
+      <p class="body-text dinner-invitation__dresscode">{{ birthdayConfig.dinner.dressCode }}</p>
     </div>
 
     <p class="body-text dinner-invitation__note rise-in">
@@ -37,7 +36,7 @@ const dateParts = computed(() => formatDateParts(birthdayConfig.dinner.date))
     </p>
 
     <AnimatedButton class="dinner-invitation__cta" @click="emit('accept')">
-      Accept Invitation
+      接受邀請
     </AnimatedButton>
   </section>
 </template>

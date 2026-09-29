@@ -47,7 +47,7 @@ function handleAddToCalendar() {
       </div>
 
       <div v-else key="confirmed" class="dinner-confirmed__content">
-        <p class="label dinner-confirmed__status rise-in">Dinner Reservation</p>
+        <p class="label-zh dinner-confirmed__status rise-in">晚餐預約</p>
         <h2 class="heading-2 rise-in">Confirmed</h2>
 
         <div class="dinner-confirmed__pass rise-in">
@@ -65,12 +65,12 @@ function handleAddToCalendar() {
 
         <div class="dinner-confirmed__actions rise-in">
           <AnimatedButton variant="ghost" @click="handleAddToCalendar">
-            Add To Calendar
+            加入行事曆
           </AnimatedButton>
         </div>
 
-        <button class="dinner-confirmed__continue label" type="button" @click="emit('continue')">
-          Continue ↓
+        <button class="dinner-confirmed__continue label-zh" type="button" @click="emit('continue')">
+          繼續 ↓
         </button>
       </div>
     </Transition>
@@ -140,7 +140,6 @@ function handleAddToCalendar() {
 .dinner-confirmed__continue {
   margin-top: var(--space-2xs);
   color: var(--text-muted);
-  letter-spacing: 0.2em;
 }
 
 @media (prefers-reduced-motion: reduce) {

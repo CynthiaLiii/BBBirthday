@@ -48,7 +48,7 @@ export const birthdayConfig: BirthdayConfig = {
     time: '19:00',
     restaurant: 'Ducky Restaurant 大嗑西式餐館 ',
     address: '臺北市中正區濟南路二段18-3號',
-    dressCode: 'Be your handsome self.',
+    dressCode: '做你最帥氣的自己就好',
   },
 
   getaway: {

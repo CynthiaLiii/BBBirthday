@@ -11,7 +11,7 @@
     'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
 
   /* 字級隨視窗高度縮放，避免內容在短螢幕裝置上需要捲動 */
-  --fs-label: clamp(0.6rem, 1.6vh, 0.7rem);
+  --fs-label: clamp(0.75rem, 2vh, 0.9rem);
   --fs-body: clamp(0.8rem, 2.2vh, 0.95rem);
   --fs-body-lg: clamp(0.9rem, 2.6vh, 1.1rem);
   --fs-h3: clamp(1.1rem, 4vh, 1.5rem);
@@ -43,6 +43,26 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  opacity: 0.72;
+}
+
+/*
+ * 中文版的 Label / Eyebrow：
+ * 中文字距本身已飽滿，沿用英文的寬字距（0.22em / 0.3em）會顯得像破版，
+ * 這裡改用較收斂的字距，維持精品質感但不會被拉得過開。
+ */
+.label-zh {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.eyebrow-zh {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
   opacity: 0.72;
 }
 

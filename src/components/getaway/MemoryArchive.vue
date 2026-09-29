@@ -8,16 +8,16 @@ defineEmits<{ continue: [] }>()
 
 <template>
   <section class="memory-archive">
-    <p class="eyebrow rise-in">Our Little Archive</p>
-    <h2 class="heading-2 rise-in memory-archive__title">A Few Small<br />Moments.</h2>
+    <p class="eyebrow-zh rise-in">我們的小小回憶錄</p>
+    <h2 class="heading-2 rise-in memory-archive__title">那些微小卻<br />珍貴的片刻</h2>
 
     <div class="memory-archive__grid rise-in">
       <MemoryCard v-for="memory in memories" :key="memory.id" :memory="memory" />
     </div>
 
-    <p class="body-text memory-archive__hint">點一下照片，翻到背面看看。</p>
+    <p class="body-text memory-archive__hint">點一下照片，翻到背面看看</p>
 
-    <AnimatedButton @click="$emit('continue')">Continue</AnimatedButton>
+    <AnimatedButton @click="$emit('continue')">繼續</AnimatedButton>
   </section>
 </template>
 

@@ -17,7 +17,7 @@ function handleOpen() {
 
 <template>
   <section class="dinner-opening">
-    <p class="eyebrow rise-in">Dear Jonathan</p>
+    <p class="eyebrow-zh dinner-opening__eyebrow rise-in">Dear Jonathan，</p>
 
     <div class="dinner-opening__envelope" :class="{ 'is-opening': isOpening }">
       <div class="dinner-opening__flap" />
@@ -25,18 +25,18 @@ function handleOpen() {
       <div class="dinner-opening__card" />
     </div>
 
-    <h1 class="heading-1 dinner-opening__title rise-in">You&rsquo;ve Got<br />Something Special.</h1>
+    <h1 class="heading-2 dinner-opening__title rise-in">你收到了一份<br />特別的心意</h1>
     <p class="body-text dinner-opening__subtitle rise-in">
-      A private invitation is waiting for you.
+      有一封專屬於你的邀請，正在等你
     </p>
 
     <button
-      class="dinner-opening__cta label"
+      class="dinner-opening__cta label-zh"
       type="button"
       :disabled="isOpening"
       @click="handleOpen"
     >
-      Open Invitation
+      打開邀請函
     </button>
   </section>
 </template>
@@ -54,6 +54,10 @@ function handleOpen() {
   gap: var(--space-md);
   padding: var(--space-xl) var(--space-lg);
   color: var(--text);
+}
+
+.dinner-opening__eyebrow {
+  font-size: 1rem;
 }
 
 .dinner-opening__envelope {
@@ -145,7 +149,6 @@ function handleOpen() {
   color: var(--bg);
   background: var(--accent);
   border-radius: var(--radius-sm);
-  letter-spacing: 0.2em;
   transition: opacity var(--duration-fast) var(--ease-editorial);
 }
 

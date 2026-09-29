@@ -17,7 +17,7 @@ function openBox() {
 <template>
   <div class="mission-packing">
     <p class="label mission-packing__label">Mission 02</p>
-    <p class="heading-3 mission-packing__question">What should<br />you bring?</p>
+    <p class="heading-3 mission-packing__question">該帶些什麼呢？</p>
 
     <button
       class="mission-packing__box"
@@ -33,11 +33,11 @@ function openBox() {
 
     <Transition name="fade">
       <div v-if="isOpen" class="mission-packing__reveal">
-        <p class="label mission-packing__tag">Overnight Bag Required</p>
+        <p class="label-zh mission-packing__tag">需要一個過夜包</p>
         <ul class="mission-packing__list body-text">
           <li v-for="item in packingItems" :key="item">{{ item }}</li>
         </ul>
-        <AnimatedButton @click="emit('complete')">Next</AnimatedButton>
+        <AnimatedButton @click="emit('complete')">下一步</AnimatedButton>
       </div>
     </Transition>
   </div>

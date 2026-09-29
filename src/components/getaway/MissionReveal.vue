@@ -20,7 +20,6 @@ const captionStages = [
   { max: 5000, text: '繼續繼續，不要停嘛 ♡' },
   { max: 8000, text: "喔齁齁~有人開始展現實力了哦" },
   { max: 12000, text: '大寶，你確定整晚都能維持這樣嗎？' },
-  // { max: Infinity, text: "Okay, babe. Now you've got my attention. ♡" },
 ]
 
 const caption = ref(captionStages[0]!.text)
@@ -81,7 +80,7 @@ function handleBlur() {
 }
 
 const displayLine = computed(() => {
-  if (phase.value === 'idle') return 'Press & hold to prove it.'
+  if (phase.value === 'idle') return '按住，證明給小寶看吧'
   return caption.value
 })
 
@@ -102,23 +101,11 @@ onUnmounted(() => {
 <template>
   <div class="mission-reveal">
     <template v-if="phase !== 'success'">
-      <p class="label mission-reveal__label">Mission 02 · Stamina Test</p>
-      <p class="heading-3 mission-reveal__question">Think you can last<br />all night, babe?</p>
-      <!-- <p class="body-text mission-reveal__subtitle">讓我看看你的耐力有多好吧</p> -->
-
-      <!-- <span
-        class="mission-reveal__heart"
-        aria-hidden="true"
-        :style="{
-          opacity: 0.35 + progress * 0.65,
-          transform: `scale(${1 + progress * 0.3})`,
-          color: progress > 0 ? 'var(--accent)' : 'var(--secondary)',
-        }"
-        >♡</span
-      > -->
+      <p class="label-zh mission-reveal__label">MISSION 02・耐力大考驗</p>
+      <p class="heading-3 mission-reveal__question">寶貝，你覺得<br />自己能撐一整晚嗎？</p>
 
       <button
-        class="mission-reveal__button label"
+        class="mission-reveal__button label-zh"
         type="button"
         :class="{ 'is-holding': phase === 'holding' || phase === 'completing' }"
         :disabled="phase === 'completing'"
@@ -134,35 +121,36 @@ onUnmounted(() => {
           :style="{ transform: `scaleX(${progress})` }"
           aria-hidden="true"
         />
-        <span class="mission-reveal__heart" aria-hidden="true"
-        :style="{
-          opacity: 0.35 + progress * 0.65,
-          transform: `scale(${1 + progress * 0.3})`,
-          color: progress > 0 ? 'var(--accent)' : 'var(--secondary)',
-        }">♡</span>
+        <!-- <span class="mission-reveal__text">Press & Hold</span> -->
+        <span
+          class="mission-reveal__heart"
+          aria-hidden="true"
+          :style="{
+            opacity: 0.35 + progress * 0.65,
+            transform: `scale(${1 + progress * 0.3})`,
+            color: progress > 0 ? 'var(--accent)' : 'var(--secondary)',
+          }"
+          >♡</span
+        >
       </button>
 
       <Transition name="fade" mode="out-in">
         <p :key="displayLine" class="body-text mission-reveal__caption">{{ displayLine }}</p>
       </Transition>
-      <!-- <p v-if="displayLineZh" class="body-text mission-reveal__caption-zh">{{ displayLineZh }}</p> -->
 
       <AnimatedButton v-if="phase === 'failed'" variant="ghost" @click="retry">
-        Try Again
+        再試一次
       </AnimatedButton>
     </template>
 
     <template v-else>
-      <p class="label mission-reveal__label">Mission Completed</p>
-      <p class="heading-3 mission-reveal__question">Okay, babe. Now you've got my attention. ♡</p>
-      <!-- <p class="body-text-lg mission-reveal__easter-egg">
-        But I guess we&rsquo;ll have to test that in person.
-      </p> -->
+      <p class="label-zh mission-reveal__label">任務完成</p>
+      <p class="heading-3 mission-reveal__question">不錯嘛，大寶 ♡</p>
       <p class="body-text mission-reveal__caption-zh">
-        看來還是得親自驗證一下(⁎⁍̴̛ᴗ⁍̴̛⁎)
+        不過還是得親自驗證一下(⁎⁍̴̛ᴗ⁍̴̛⁎)
       </p>
 
-      <AnimatedButton @click="emit('complete')">Next</AnimatedButton>
+      <AnimatedButton @click="emit('complete')">下一步</AnimatedButton>
     </template>
   </div>
 </template>
@@ -179,11 +167,6 @@ onUnmounted(() => {
 
 .mission-reveal__label {
   color: var(--accent);
-}
-
-.mission-reveal__subtitle {
-  color: var(--text-muted);
-  margin-top: calc(-1 * var(--space-sm));
 }
 
 .mission-reveal__heart {
@@ -236,13 +219,6 @@ onUnmounted(() => {
 .mission-reveal__caption-zh {
   color: var(--text-muted);
   margin-top: calc(-1 * var(--space-sm));
-}
-
-.mission-reveal__easter-egg {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--accent);
-  max-width: 280px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -28,17 +28,17 @@ onMounted(() => {
       <div v-if="phase === 'fading'" key="fading" class="getaway-confirmed__blank" />
 
       <div v-else key="content" class="getaway-confirmed__content">
-        <p class="label getaway-confirmed__status rise-in">Reservation</p>
+        <p class="label-zh getaway-confirmed__status rise-in">旅行預約</p>
         <h2 class="heading-2 rise-in">Confirmed</h2>
 
         <Transition name="fade">
           <p v-if="phase === 'tagline'" class="body-text-lg getaway-confirmed__tagline">
-            One birthday.<br />One little getaway.<br />Just us.
+            One birthday<br />One little getaway.<br />Just us.
           </p>
         </Transition>
 
         <AnimatedButton v-if="phase === 'tagline'" class="getaway-confirmed__cta" @click="emit('continue')">
-          Continue
+          繼續
         </AnimatedButton>
       </div>
     </Transition>

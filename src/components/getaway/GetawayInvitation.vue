@@ -31,9 +31,9 @@ function dodgeNoButton() {
 
 <template>
   <section class="getaway-invitation">
-    <p class="eyebrow rise-in">An Exclusive Weekend For Two</p>
+    <p class="eyebrow-zh rise-in">專屬兩人的週末</p>
 
-    <h2 class="heading-2 rise-in">The Birthday<br />Getaway</h2>
+    <h2 class="heading-2 rise-in">生日小旅行</h2>
 
     <div class="getaway-invitation__details rise-in">
       <p class="label getaway-invitation__dates">
@@ -48,7 +48,7 @@ function dodgeNoButton() {
 
       <div class="getaway-invitation__row">
         <span class="label">Packing</span>
-        <span class="body-text-lg">Overnight Bag Required</span>
+        <span class="body-text-lg">請攜帶過夜包</span>
       </div>
 
       <div class="getaway-invitation__row">
@@ -59,18 +59,15 @@ function dodgeNoButton() {
       </div>
     </div>
 
-    <p class="body-text getaway-invitation__note rise-in">
-      一個只屬於我們兩個的生日週末。
-    </p>
 
-    <p class="heading-3 getaway-invitation__ask rise-in">Will you come with me?</p>
+    <p class="heading-4 getaway-invitation__ask rise-in">你願意跟我一起去嗎？</p>
 
     <div class="getaway-invitation__actions">
-      <AnimatedButton @click="emit('accept')">Yes, I&rsquo;m In</AnimatedButton>
+      <AnimatedButton @click="emit('accept')">參加</AnimatedButton>
 
       <button
         v-if="!noButtonGaveUp"
-        class="getaway-invitation__no label"
+        class="getaway-invitation__no label-zh"
         type="button"
         :style="
           noButtonPosition
@@ -81,10 +78,10 @@ function dodgeNoButton() {
         @touchstart.prevent="dodgeNoButton"
         @click="dodgeNoButton"
       >
-        No
+        不參加
       </button>
       <p v-else class="body-text getaway-invitation__no-caption">
-        This button doesn&rsquo;t work :)
+        不准按這個欸 :)
       </p>
     </div>
   </section>

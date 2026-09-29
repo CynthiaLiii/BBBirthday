@@ -38,8 +38,8 @@ function retry() {
 
 <template>
   <section class="identity-check">
-    <p class="eyebrow rise-in">
-      Identity Verification ({{ currentIndex + 1 }}/{{ identityQuestions.length }})
+    <p class="eyebrow-zh rise-in">
+      身分驗證（{{ currentIndex + 1 }}/{{ identityQuestions.length }}）
     </p>
 
     <p class="body-text-lg identity-check__question rise-in">
@@ -61,7 +61,7 @@ function retry() {
 
     <Transition name="fade">
       <div v-if="status === 'incorrect'" class="identity-check__feedback identity-check__feedback--denied">
-        <p class="label">Access Denied</p>
+        <p class="label-zh">驗證失敗</p>
         <p class="body-text">{{ currentQuestion?.failureMessage }}</p>
         <AnimatedButton variant="ghost" @click="retry">再試一次</AnimatedButton>
       </div>
@@ -69,7 +69,7 @@ function retry() {
 
     <Transition name="fade">
       <div v-if="status === 'correct'" class="identity-check__feedback identity-check__feedback--verified">
-        <p class="label">Identity Verified</p>
+        <p class="label-zh">驗證成功</p>
         <p class="heading-3">{{ currentQuestion?.successMessage }}</p>
       </div>
     </Transition>
@@ -130,11 +130,11 @@ function retry() {
   gap: var(--space-sm);
 }
 
-.identity-check__feedback--denied .label {
+.identity-check__feedback--denied .label-zh {
   color: #c17a68;
 }
 
-.identity-check__feedback--verified .label {
+.identity-check__feedback--verified .label-zh {
   color: var(--accent);
 }
 </style>

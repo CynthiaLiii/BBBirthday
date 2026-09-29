@@ -6,9 +6,9 @@ const store = useInvitationStore()
 
 <template>
   <section class="dinner-teaser">
-    <p class="eyebrow rise-in">One More Thing&hellip;</p>
+    <p class="eyebrow-zh rise-in">還有一件事……</p>
 
-    <h2 class="heading-2 rise-in">Your Birthday<br />Isn&rsquo;t Over Yet.</h2>
+    <h2 class="heading-2 rise-in">你的生日<br />還沒有結束</h2>
 
     <p class="dinner-teaser__dates label rise-in">Nov 06 — Nov 07</p>
 
@@ -18,14 +18,14 @@ const store = useInvitationStore()
 
     <div class="dinner-teaser__lock rise-in">
       <p class="label dinner-teaser__lock-title">Chapter 02</p>
-      <p class="heading-3 dinner-teaser__lock-status">Locked</p>
+      <p class="heading-3 dinner-teaser__lock-status">尚未解鎖</p>
       <p class="body-text dinner-teaser__lock-note">
-        Your next invitation<br />will arrive on your birthday.
+        下一份邀請，<br />會在你生日當天送達
       </p>
     </div>
 
-    <button class="dinner-teaser__replay label" type="button" @click="store.replayDinner">
-      Replay
+    <button class="dinner-teaser__replay label-zh" type="button" @click="store.replayDinner">
+      重新播放
     </button>
   </section>
 </template>
@@ -80,6 +80,5 @@ const store = useInvitationStore()
   margin-top: var(--space-2xs);
   color: var(--text-muted);
   opacity: 0.5;
-  letter-spacing: 0.2em;
 }
 </style>

@@ -29,7 +29,7 @@ function setupCanvas() {
   ctx.fillStyle = '#a79c8c'
   ctx.fillRect(0, 0, rect.width, rect.height)
   ctx.fillStyle = 'rgba(255,255,255,0.8)'
-  ctx.font = '600 0.7rem Inter, sans-serif'
+  ctx.font = '600 0.8rem Inter, sans-serif'
   ctx.textAlign = 'center'
   ctx.fillText('刮開查看日期', rect.width / 2, rect.height / 2)
 
@@ -95,7 +95,7 @@ onMounted(setupCanvas)
 <template>
   <div class="mission-date">
     <p class="label mission-date__label">Mission 01</p>
-    <p class="heading-3 mission-date__question">One date isn't<br />enough, right?</p>
+    <p class="heading-3 mission-date__question">一次約會怎麼夠？</p>
 
     <div class="mission-date__scratch-area">
       <p class="heading-2 mission-date__answer" aria-hidden="true">NOV 06 — 07</p>
@@ -113,13 +113,13 @@ onMounted(setupCanvas)
 
     <Transition name="fade">
       <p v-if="isRevealed" class="body-text-lg mission-date__message">
-        And by “more dates,” I mean forever.
+        還是說，再給我一百萬天好不好？
       </p>
     </Transition>
 
     <Transition name="fade">
       <AnimatedButton v-if="isRevealed" class="mission-date__next" @click="emit('complete')">
-        Next
+        下一步
       </AnimatedButton>
     </Transition>
   </div>
@@ -127,6 +127,7 @@ onMounted(setupCanvas)
 
 <style scoped>
 .mission-date {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -19,7 +19,7 @@ function handleAddToCalendar() {
 
   addToCalendar({
     title: 'Birthday Getaway ❤️',
-    description: "It's a secret.",
+    description: '這是個秘密 ♡',
     start,
     end,
     filename: 'birthday-getaway.ics',
@@ -29,7 +29,7 @@ function handleAddToCalendar() {
 
 <template>
   <section class="birthday-pass">
-    <p class="eyebrow rise-in">Birthday Pass</p>
+    <p class="eyebrow-zh rise-in">生日旅行通行證</p>
 
     <div class="birthday-pass__card rise-in">
       <InvitationPass
@@ -48,11 +48,11 @@ function handleAddToCalendar() {
     <p class="body-text-lg birthday-pass__ending rise-in">See you Friday.</p>
 
     <div class="birthday-pass__actions rise-in">
-      <AnimatedButton variant="ghost" @click="handleAddToCalendar">Add To Calendar</AnimatedButton>
+      <AnimatedButton variant="ghost" @click="handleAddToCalendar">加入行事曆</AnimatedButton>
     </div>
 
-    <button class="birthday-pass__replay label" type="button" @click="store.replayGetaway">
-      Replay
+    <button class="birthday-pass__replay label-zh" type="button" @click="store.replayGetaway">
+      重新播放
     </button>
   </section>
 </template>
@@ -95,6 +95,5 @@ function handleAddToCalendar() {
   margin-top: var(--space-2xs);
   color: var(--text-muted);
   opacity: 0.6;
-  letter-spacing: 0.2em;
 }
 </style>
