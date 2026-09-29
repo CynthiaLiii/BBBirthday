@@ -63,7 +63,7 @@ function dodgeNoButton() {
     <p class="heading-4 getaway-invitation__ask rise-in">你願意跟我一起去嗎？</p>
 
     <div class="getaway-invitation__actions">
-      <AnimatedButton @click="emit('accept')">參加</AnimatedButton>
+      <AnimatedButton @click="emit('accept')">願意</AnimatedButton>
 
       <button
         v-if="!noButtonGaveUp"
@@ -78,7 +78,7 @@ function dodgeNoButton() {
         @touchstart.prevent="dodgeNoButton"
         @click="dodgeNoButton"
       >
-        不參加
+        不願意
       </button>
       <p v-else class="body-text getaway-invitation__no-caption">
         不准按這個欸 :)

@@ -33,7 +33,7 @@ onMounted(() => {
 
         <Transition name="fade">
           <p v-if="phase === 'tagline'" class="body-text-lg getaway-confirmed__tagline">
-            One birthday<br />One little getaway.<br />Just us.
+            One birthday.<br />One little getaway.<br />Just us.
           </p>
         </Transition>
 

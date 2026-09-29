@@ -35,7 +35,7 @@ export const identityQuestions: IdentityQuestion[] = [
       { id: 'c', label: '每天都想親親抱抱你的小寶', correct: false },
       { id: 'd', label: '以上皆是', correct: true },
     ],
-    successMessage: '恭喜你！你是全世界最幸福的男人',
+    successMessage: '恭喜！你是全世界最幸福的男人',
     failureMessage: '答案不完整，想一下再重新回答',
   },
 ]
