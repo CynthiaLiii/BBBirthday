@@ -45,9 +45,9 @@ export const birthdayConfig: BirthdayConfig = {
 
   dinner: {
     date: '2026-11-03',
-    time: '19:00',
-    restaurant: 'Ducky Restaurant 大嗑西式餐館 ',
-    address: '臺北市中正區濟南路二段18-3號',
+    time: '19:40',
+    restaurant: '肉次方燒肉放題 台北峨眉店 ',
+    address: '臺北市萬華區萬壽里峨眉街37號4樓',
     dressCode: '做你最帥氣的自己就好',
   },
 
